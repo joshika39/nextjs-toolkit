@@ -1,7 +1,9 @@
 {
   "name": "@ablaze/nextjs-toolkit",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
