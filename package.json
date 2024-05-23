@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "A collection of Next.js/React web components",
   "dependencies": {
+    "@remixicon/react": "^4.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.379.0",
