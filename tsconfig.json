@@ -24,7 +24,10 @@
     "paths": {
       "@/components/*": [
         "src/components/*"
-      ]
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
     },
     "allowJs": true,
     "incremental": true,
