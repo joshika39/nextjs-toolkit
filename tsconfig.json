@@ -14,8 +14,9 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "noEmit": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -27,7 +28,7 @@
       ],
       "@/lib/*": [
         "./src/lib/*"
-      ],
+      ]
     },
     "allowJs": true,
     "esModuleInterop": true,
@@ -35,7 +36,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "incremental": true
   },
   "include": [
     "src",
