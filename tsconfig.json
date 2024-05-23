@@ -28,7 +28,10 @@
       ],
       "@/lib/*": [
         "./src/lib/*"
-      ]
+      ],
+      "@/i18n/*": [
+        "./src/i18n/*"
+      ],
     },
     "allowJs": true,
     "esModuleInterop": true,
