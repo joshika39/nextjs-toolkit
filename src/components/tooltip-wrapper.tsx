@@ -8,7 +8,7 @@ type TooltipProps = {
   asChild?: boolean
 }
 
-export default function TTipWrapper({children, content, className, asChild}: TooltipProps) {
+export default function TooltipWrapper({children, content, className, asChild}: TooltipProps) {
   return (
     <TooltipProvider>
       <Tooltip>
