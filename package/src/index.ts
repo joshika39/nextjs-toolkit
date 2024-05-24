@@ -18,7 +18,7 @@ export {
 }
 
 // Shadcn components
-/*
+
 export * from "./components/ui/3d-card"
 export {Alert, AlertTitle, AlertDescription} from "./components/ui/alert"
 export {Avatar, AvatarImage, AvatarFallback} from "./components/ui/avatar"
@@ -45,7 +45,7 @@ export * from "./components/ui/toast"
 export * from "./components/ui/toaster"
 export * from "./components/ui/use-toast"
 export * from "./components/ui/tooltip"
- */
+
 
 // Default values
 export {defaultEditorContent, defaultFormState} from "./defaults"
@@ -53,4 +53,4 @@ export * from "./types"
 export * from "./lib/utils"
 export * from "./i18n/utils"
 export * from "./i18n/time"
-//export * from "./shadcn"
+export * from "./shadcn"
