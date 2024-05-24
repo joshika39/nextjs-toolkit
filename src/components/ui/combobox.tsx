@@ -34,7 +34,7 @@ export type ComboboxLocale = {
   label: string;
 }
 
-type ComboboxProps<T> = {
+export type ComboboxProps<T> = {
   items: ComboboxItem<T>[];
   initialValue: T | null;
   locale: ComboboxLocale;

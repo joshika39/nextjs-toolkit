@@ -1,7 +1,6 @@
-import {getDictionary} from "@/i18n/dictionaries";
 import {formatStringTranslation as f} from '@/i18n/utils'
 
-type Locale = {
+export type FromNowLocale = {
   justNow: string;
   years: string;
   months: string;
@@ -15,13 +14,11 @@ type Locale = {
 /**
  * Returns a string representing the time difference between the current time and the given date.
  * @param date
- * @param locale
+ * @param locales
  * @param includeSeconds
  */
-export async function fromNowAsync(date: Date, locale: string, includeSeconds = false) {
-  const dict = await getDictionary(locale);
+export async function fromNowAsync(date: Date, locales: FromNowLocale, includeSeconds = false) {
   const currentTime = new Date();
-  const locales: Locale = dict.time.ago;
   const diff = currentTime.getTime() - date.getTime();
   const seconds = Math.floor(diff / 1000);
   const minutes = Math.floor(seconds / 60);
@@ -67,16 +64,14 @@ export async function fromNowAsync(date: Date, locale: string, includeSeconds = 
   return locales.justNow;
 }
 
-/**
- * Appends the timezone offset to the given date.
- * @param date - The date to append the offset to.
- */
-export function appendOffset(date: Date): Date {
-  const offset = new Date().getTimezoneOffset();
-  const offsetHours = Math.floor(offset / 60);
-  const offsetMinutes = offset % 60;
-  // date.setHours(date.getHours() + offsetHours);
-  // date.setMinutes(date.getMinutes() + offsetMinutes);
-  return date;
-}
+export class TimeService {
+  private readonly _fromNowLocale: FromNowLocale;
 
+  public constructor(fromNowLocale: FromNowLocale) {
+    this._fromNowLocale = fromNowLocale;
+  }
+
+  async fromNow(date: Date, includeSeconds = false) {
+    return fromNowAsync(date, this._fromNowLocale, includeSeconds);
+  }
+}
