@@ -1,15 +1,6 @@
 {
   "name": "@ablaze/nextjs-toolkit",
   "version": "1.0.10",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "bundle": "tsup src/index.ts"
-  },
   "keywords": [
     "nextjs",
     "shadcn",
@@ -19,6 +10,29 @@
   "author": "josh.hegedus@outlook.com",
   "license": "ISC",
   "description": "A collection of Next.js/React web components",
+  "bugs": {
+    "url": "https://github.com/Ablaze-MIRAI/nextjs-toolkit/issues"
+  },
+  "homepage": "https://github.com/Ablaze-MIRAI/nextjs-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ablaze-MIRAI/nextjs-toolkit.git"
+  },
+  "source": "src/index.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "emit-types": "tsc -p tsconfig.build.json",
+    "build:swc": "npx swc src --copy-files -d dist && npm run emit-types",
+    "build:babel": "npm run clean && babel src --extensions '.ts','.tsx' --copy-files --no-copy-ignored -d dist --ignore '**/*.test.*' && npm run emit-types",
+    "prune-dist": "find dist -type f -name '*.test.*' -delete",
+    "clean": "rm -rf dist/",
+    "prepublishOnly": "npm run clean && npm run build:babel && npm run prune-dist",
+    "publish:local": "npx yalc publish",
+    "format": "prettier --write '**/*.{ts,tsx}'"
+  },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -43,18 +57,41 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "react-aria": "^3.27.0",
+    "react-stately": "^3.25.0",
+    "react-use-measure": "2.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "7.16.7",
+    "@babel/core": "7.16.7",
+    "@swc/cli": "0.1.55",
+    "@swc/core": "1.2.124",
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "14.4.3",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
+    "@types/jest": "29.1.1",
+    "@types/react-is": "17.0.3",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.10.0",
-    "@typescript-eslint/parser": "^7.10.0",
+    "jest": "29.1.1",
+    "jest-css-modules-transform": "4.4.2",
+    "jest-environment-jsdom": "^29.1.2",
+    "source-map-support": "0.5.21",
+    "ts-jest": "29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "tailwindcss": "^3.4.3"
+  },
+  "peerDependencies": {
+    "next": ">=12.x | >=13.x",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-is": "^18.0.0",
+    "styled-jsx": ">=5.x"
   }
 }
