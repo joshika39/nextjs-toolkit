@@ -1,6 +1,6 @@
 {
   "name": "@ablaze/nextjs-toolkit",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -12,7 +12,6 @@
     "bundle": "tsup src/index.ts"
   },
   "keywords": ["nextjs", "shadcn", "react", "web-components"],
-  "readme": "README.md",
   "author": "josh.hegedus@outlook.com",
   "license": "ISC",
   "description": "A collection of Next.js/React web components",
