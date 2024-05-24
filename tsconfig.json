@@ -34,7 +34,7 @@
       ],
       "@/i18n/*": [
         "./src/i18n/*"
-      ],
+      ]
     },
     "allowJs": true,
     "esModuleInterop": true,
@@ -45,16 +45,6 @@
     ],
     "incremental": true
   },
-  "include": [
-    "src",
-    ".next/types/**/*.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./src","next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -1,16 +1,9 @@
-import ThemedImage from "@/components/themed-image";
+import {ThemeSwitch} from "@/components/theme-switch.tsx";
 
-export default function Page() {
+export default function Home() {
   return (
-    <div>
-      <h1>Hello, Next.js!</h1>
-      <ThemedImage
-        darkImage={"https://picsum.photos/id/1015/600/400"}
-        lightImage={"https://picsum.photos/id/1015/600/400"}
-        width={600}
-        height={400}
-        alt={"test"}
-      />
-    </div>
-  )
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <ThemeSwitch />
+    </main>
+  );
 }

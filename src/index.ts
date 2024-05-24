@@ -43,6 +43,7 @@ export * from "./components/ui/table"
 export * from "./components/ui/tabs"
 export * from "./components/ui/toast"
 export * from "./components/ui/toaster"
+export * from "./components/ui/use-toast"
 export * from "./components/ui/tooltip"
 
 // Default values
