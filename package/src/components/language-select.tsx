@@ -12,7 +12,7 @@ import {
 } from './ui/dropdown-menu';
 import {Button} from './ui/button';
 import {LanguagesIcon} from "lucide-react";
-import {Language} from "@/types.ts";
+import {Language} from "@/types";
 
 type Locale = {
   languageSelect: string;

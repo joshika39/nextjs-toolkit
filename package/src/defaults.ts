@@ -1,4 +1,4 @@
-import {FormState} from "./types.ts";
+import {FormState} from "./types";
 
 export const defaultFormState: FormState = {
   error: undefined,

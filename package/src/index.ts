@@ -1,10 +1,10 @@
-import ThemedImage from "@/components/themed-image"
-import FAlert from "@/components/alert"
 import {ThemeProvider} from "./components/theme-provider"
 import {ThemeSwitch} from "./components/theme-switch"
 import {LocalTime} from "./components/localtime"
 import LanguageSelect from "./components/language-select"
 import TooltipWrapper from "./components/tooltip-wrapper"
+import ThemedImage from "./components/themed-image"
+import FAlert from "./components/alert"
 
 // Custom extended components
 export {
