@@ -40,4 +40,5 @@ export * from "./components/ui/tooltip"
 
 // Default values
 export {defaultEditorContent, defaultFormState} from "./defaults"
+export * from "./types"
 
