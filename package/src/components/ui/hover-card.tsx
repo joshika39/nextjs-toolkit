@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
 import {cva, type VariantProps} from "class-variance-authority"
-import {cn} from "@/lib/utils"
+import {cn} from "../../lib/utils"
 
 const HoverCard = HoverCardPrimitive.Root
 

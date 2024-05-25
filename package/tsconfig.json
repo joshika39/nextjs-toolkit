@@ -2,34 +2,26 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@/components/*": [
-        "./components/*"
-      ],
-      "@/i18n/*": [
-        "./i18n/*"
-      ],
-      "@/lib/*": [
-        "./lib/*"
-      ]
+      "*": ["src/*"]
     },
-    "target": "es2016",
-    "jsx": "react",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "outDir": "dist",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": false,
+    // "noEmit": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist",
-    "declarationDir": "types",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

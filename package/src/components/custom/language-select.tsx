@@ -9,10 +9,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '../ui/dropdown-menu';
-import {Button} from '../ui/button';
+} from '../ui';
+import {Button} from '../ui';
 import {LanguagesIcon} from "lucide-react";
-import {Language} from "@/types";
+import {Language} from "../../types";
+import React from 'react';
 
 type Locale = {
   languageSelect: string;

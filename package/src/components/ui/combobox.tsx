@@ -5,7 +5,7 @@ import {
   ChevronsUpDown,
 } from "lucide-react"
 
-import {Button} from "@/components/ui/button"
+import {Button} from "./button"
 import {
   Command,
   CommandEmpty,
@@ -13,12 +13,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "./command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "./popover"
 import {useEffect} from "react";
 
 export type ComboboxItem<T> = {

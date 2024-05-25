@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ablaze/nextjs-toolkit": "^1.0.20",
+    "@ablaze/nextjs-toolkit": "^1.0.23",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.379.0",

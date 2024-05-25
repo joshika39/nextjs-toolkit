@@ -1,7 +1,7 @@
-import {cn} from "@/lib/utils";
+import {cn} from "../../lib/utils";
 import React from "react";
-import {Separator} from "@/components/ui/separator";
-import {ScrollArea} from "@/components/ui/scroll-area";
+import {Separator} from "./separator";
+import {ScrollArea} from "./scroll-area";
 
 const inputs = (height: string) => `grid md:auto-rows-[${height}rem] grid-cols-1 gap-4 max-w-7xl mx-auto`;
 const shadow = 'shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]';

@@ -1,4 +1,4 @@
-import {formatStringTranslation as f} from '@/i18n/utils'
+import {formatStringTranslation as f} from '../i18n/utils'
 
 export type FromNowLocale = {
   justNow: string;
