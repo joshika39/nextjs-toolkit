@@ -2,7 +2,6 @@ import React from "react";
 
 const isNumber = (value: any) => typeof value === "number";
 
-
 /**
  * Formats a translation string with the given values.
  * {{name}} will be replaced with the value of values.name
