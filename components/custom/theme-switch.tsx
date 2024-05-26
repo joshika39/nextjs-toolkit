@@ -4,13 +4,13 @@ import * as React from "react"
 import {RiSunFill, RiMoonLine} from "@remixicon/react";
 import {useTheme} from "next-themes"
 
-import {Button} from "../ui"
+import {Button} from "../ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui"
+} from "../ui/dropdown-menu"
 
 function AbsoluteDiv({children}: { children: React.ReactNode }) {
   return (

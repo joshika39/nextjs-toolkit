@@ -9,8 +9,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '../ui';
-import {Button} from '../ui';
+} from '../ui/dropdown-menu';
+import {Button} from '../ui/button';
 import {LanguagesIcon} from "lucide-react";
 import {Language} from "../../types";
 import React from 'react';
