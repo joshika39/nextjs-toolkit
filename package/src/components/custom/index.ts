@@ -1,4 +1,4 @@
-export {default as FAlert, AlertLocale} from "./alert";
+export {default as FAlert} from "./alert";
 export {default as TooltipWrapper} from "./tooltip-wrapper";
 export {default as ThemedImage} from "./themed-image";
 export {ThemeSwitch} from "./theme-switch";

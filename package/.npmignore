@@ -18,3 +18,4 @@ tsconfig.json
 tsconfig.build.json
 declaration.d.ts
 package-lock.json
+tailwind.config.ts
