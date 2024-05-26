@@ -7,7 +7,11 @@ This is a Next.js toolkit for ablaze. It makes creating websites with the same l
 Add the submodule to your repository:
 
 ```bash
+# Using https
 git submodule add https://github.com/Ablaze-MIRAI/nextjs-toolkit.git ./components/toolkit
+
+# Or using ssh
+git submodule add git@github.com:Ablaze-MIRAI/nextjs-toolkit.git ./components/toolkit
 ```
 
 You will need to install the following packages as well:
