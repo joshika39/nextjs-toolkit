@@ -4,24 +4,23 @@ This is a Next.js toolkit for ablaze. It makes creating websites with the same l
 
 ## Getting Started
 
-As this is a private npm package, you will need to login to the npm registry to install this package. You can do this by running the following command:
+Add the submodule to your repository:
 
 ```bash
-npm login --registry=https://ablazenpm.kou-gen.net/
-```
 
-## Use it in a new project
-
-Add a `.npmrc` file to your project with the following content:
+git submodule add https://github.com/Ablaze-MIRAI/nextjs-toolkit.git ./components/toolkit
 
 ```
-@ablaze:registry=https://ablazenpm.kou-gen.net/
-```
 
-Then run the following command:
+I suggest you to also add the path to the tsconfig.json file:
 
-```bash
-npm login --registry=https://ablazenpm.kou-gen.net/
-
-npm install @ablaze/nextjs-toolkit
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@toolkit/*": ["./components/toolkit/*"]
+    }
+  }
+}
 ```
