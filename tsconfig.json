@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "paths": {
-      "*": ["src/*"]
+      "@/toolkit/*": [
+        "./components/ui/*",
+        "./components/layout/*",
+        "./components/custom/*",
+        "./components/markdown/*",
+        "./components/*",
+        "./lib/*",
+        "./helpers/*",
+        "./i18n/*",
+      ],
     },
     "outDir": "dist",
     "target": "es5",
@@ -11,7 +19,6 @@
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": false,
-    // "noEmit": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
