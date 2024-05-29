@@ -33,13 +33,13 @@ If you use ssh, then you need to have your ssh key added to your GitHub account.
 
 ```bash
 # Using npm
-npm i @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+npm i sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 
 # Or using yarn
-yarn add @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+yarn add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 
 # Or using pnpm
-pnpm add @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+pnpm add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 ```
 
 ### Step 3: Add the toolkit path to your `tailwind.config.[js|ts]` file
@@ -62,13 +62,50 @@ const config = {
 
 ### Step 4: [Optional] Add the path to the `tsconfig.json` file
 You will have an easier time importing the toolkit components if you add the path to the `tsconfig.json` file.
+
+You have two options:
+ - The first is easier to set up, but it will be a bit harder to maintain.
+(You will add only the root path to the toolkit, and then you 
+will have to import the components like this: `import { Button } from '@toolkit/components/ui/button'`.)
+ - The second is a bit harder to set up, but it will be easier to maintain.
+(You will add the sub paths separately, and then 
+you will be able to import the components like this: `import { Button } from '@toolkit/button'`.)
+
+#### Option 1: Add the root path to the `tsconfig.json` file
+
 ```json
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@toolkit/*": [
-        "./components/toolkit/*"
+        "./toolkit/*"
+      ]
+    }
+  }
+}
+```
+
+#### Option 2: Add the sub paths to the `tsconfig.json` file
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/toolkit/components/*": [
+        "./toolkit/components/ui/*",
+        "./toolkit/components/layout/*",
+        "./toolkit/components/custom/*",
+        "./toolkit/components/markdown/*",
+        "./toolkit/components/*",
+        "./toolkit/helpers/*"
+      ],
+      "@/toolkit/lib/*": [
+        "./toolkit/lib/*"
+      ],
+      "@/toolkit/i18n/*": [
+        "./toolkit/i18n/*"
       ]
     }
   }

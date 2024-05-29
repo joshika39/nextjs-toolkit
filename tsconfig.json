@@ -1,17 +1,31 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "paths": {
-      "*": ["src/*"]
+      "@/toolkit/components/*": [
+        "./components/ui/*",
+        "./components/layout/*",
+        "./components/custom/*",
+        "./components/markdown/*",
+        "./components/*"
+      ],
+      "@/toolkit/i18n/*": [
+        "./i18n/*"
+      ],
+      "@/toolkit/lib/*": [
+        "./lib/*"
+      ]
     },
     "outDir": "dist",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": false,
-    // "noEmit": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
@@ -20,8 +34,16 @@
     "resolveJsonModule": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": [
+      "node",
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

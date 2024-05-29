@@ -1,4 +1,4 @@
-import {cn} from "../../lib/utils";
+import {cn} from "@/toolkit/lib/utils";
 import React from "react";
 import {Separator} from "./separator";
 import {ScrollArea} from "./scroll-area";
