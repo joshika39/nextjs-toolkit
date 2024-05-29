@@ -1,4 +1,4 @@
-import { createImageUpload } from "novel/dist/plugins";
+import { createImageUpload } from "novel/plugins";
 import { toast } from "sonner";
 
 const onUpload = (file: File) => {

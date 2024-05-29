@@ -11,8 +11,8 @@ import {
   Text,
   TextQuote,
 } from "lucide-react";
-import { createSuggestionItems } from "novel/dist/extensions";
-import { Command, renderItems } from "novel/dist/extensions";
+import { createSuggestionItems } from "novel/extensions";
+import { Command, renderItems } from "novel/extensions";
 import { uploadFn } from "./image-upload";
 
 // TODO: Localize the strings.
