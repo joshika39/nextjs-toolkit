@@ -13,7 +13,7 @@ import {Button} from "@/toolkit/components/button";
 import {ArrowUp} from "lucide-react";
 import Magic from "../icons/magic";
 import CrazySpinner from "../icons/crazy-spinner";
-import {addAIHighlight} from "novel/dist/extensions";
+import {addAIHighlight} from "novel/extensions";
 
 //TODO: I think it makes more sense to create a custom Tiptap extension for this functionality https://tiptap.dev/docs/editor/ai/introduction
 interface AISelectorProps {

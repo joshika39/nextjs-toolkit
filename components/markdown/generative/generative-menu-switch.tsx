@@ -1,7 +1,7 @@
 import {EditorBubble, EditorInstance, useEditor} from "novel";
 import React, { Fragment, useEffect, type ReactNode } from "react";
 import { AISelector } from "./ai-selector";
-import { removeAIHighlight } from "novel/dist/extensions";
+import { removeAIHighlight } from "novel/extensions";
 
 interface GenerativeMenuSwitchProps {
   children: ReactNode;

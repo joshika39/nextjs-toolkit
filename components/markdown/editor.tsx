@@ -19,13 +19,13 @@ import {ColorSelector} from "./selectors/color-selector";
 import {TextButtons} from "./selectors/text-buttons";
 import {slashCommand, suggestionItems} from "./slash-command";
 import GenerativeMenuSwitch from "./generative/generative-menu-switch";
-import {handleImageDrop, handleImagePaste} from "novel/dist/plugins";
+import {handleImageDrop, handleImagePaste} from "novel/plugins";
 import {uploadFn} from "./image-upload";
 import {Range} from '@tiptap/core';
 import {convertNovelToHtml} from "./helpers/editor-processor";
 import {Button} from "@/toolkit/components/button";
 import {defaultEditorContent} from "@/toolkit/lib/defaults";
-import {handleCommandNavigation, ImageResizer, SuggestionItem} from "novel/dist/extensions";
+import {handleCommandNavigation, ImageResizer, SuggestionItem} from "novel/extensions";
 
 const extensions = [...defaultExtensions, slashCommand];
 
