@@ -106,6 +106,9 @@ you will be able to import the components like this: `import { Button } from '@t
       ],
       "@/toolkit/i18n/*": [
         "./toolkit/i18n/*"
+      ],
+      "@/toolkit/*": [
+        "./toolkit/*"
       ]
     }
   }
