@@ -1,6 +1,6 @@
 "use client";
 
-import { Command, CommandInput } from "@/toolkit/command";
+import { Command, CommandInput } from "@/toolkit/components/command";
 import { useCompletion } from "ai/react";
 import { toast } from "sonner";
 import {EditorInstance, useEditor} from "novel";
@@ -8,11 +8,11 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import AISelectorCommands from "./ai-selector-commands";
 import AICompletionCommands from "./ai-completion-command";
-import { ScrollArea } from "@/toolkit/scroll-area";
-import { Button } from "@/toolkit/button";
+import { ScrollArea } from "@/toolkit/components/scroll-area";
+import { Button } from "@/toolkit/components/button";
 import { ArrowUp } from "lucide-react";
-import Magic from "@/toolkit/icons/magic";
-import CrazySpinner from "@/toolkit/icons/crazy-spinner";
+import Magic from "../icons/magic";
+import CrazySpinner from "../icons/crazy-spinner";
 import { addAIHighlight } from "novel/dist/extensions";
 
 //TODO: I think it makes more sense to create a custom Tiptap extension for this functionality https://tiptap.dev/docs/editor/ai/introduction

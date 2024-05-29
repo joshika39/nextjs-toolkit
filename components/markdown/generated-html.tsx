@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from "react";
 import {convertNovelToHtml} from "./helpers/editor-processor";
 import {JSONContent} from "novel";
-import {atou} from "@/toolkit/utils";
+import {atou} from "@/toolkit/lib/utils";
 
 export const htmlStringToReact = (html: string) => {
   return <div className={'rendered-html'} dangerouslySetInnerHTML={{__html: html}}/>;

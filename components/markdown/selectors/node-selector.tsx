@@ -1,4 +1,4 @@
-import {Popover, PopoverContent, PopoverTrigger} from "@/toolkit/popover";
+import {Popover, PopoverContent, PopoverTrigger} from "@/toolkit/components/popover";
 import {
   Check,
   ChevronDown,
@@ -13,7 +13,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { EditorBubbleItem, useEditor } from "novel";
-import {Button} from "@/toolkit/button";
+import {Button} from "@/toolkit/components/button";
 
 export type SelectorItem = {
   name: string;

@@ -1,8 +1,8 @@
 import { Check, ChevronDown } from "lucide-react";
 import type { Dispatch, SetStateAction } from "react";
 import { EditorBubbleItem, useEditor } from "novel";
-import {Popover, PopoverContent, PopoverTrigger} from "@/toolkit/popover";
-import {Button} from "@/toolkit/button";
+import {Popover, PopoverContent, PopoverTrigger} from "@/toolkit/components/popover";
+import {Button} from "@/toolkit/components/button";
 
 const TEXT_COLORS: BubbleColorMenuItem[] = [
   {

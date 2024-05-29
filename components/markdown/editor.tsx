@@ -11,7 +11,7 @@ import {
   EditorCommandList,
 } from "novel";
 import {defaultExtensions} from "./extensions";
-import {Separator} from "@/toolkit/separator";
+import {Separator} from "@/toolkit/components/separator";
 import {NodeSelector} from "./selectors/node-selector";
 import {LinkSelector} from "./selectors/link-selector";
 import {ColorSelector} from "./selectors/color-selector";
@@ -23,8 +23,8 @@ import {handleImageDrop, handleImagePaste} from "novel/dist/plugins";
 import {uploadFn} from "./image-upload";
 import {Range} from '@tiptap/core';
 import {convertNovelToHtml} from "./helpers/editor-processor";
-import {Button} from "@/toolkit/button";
-import {defaultEditorContent} from "@/toolkit/defaults";
+import {Button} from "@/toolkit/components/button";
+import {defaultEditorContent} from "@/toolkit/lib/defaults";
 import {handleCommandNavigation, ImageResizer, SuggestionItem} from "novel/dist/extensions";
 
 const extensions = [...defaultExtensions, slashCommand];

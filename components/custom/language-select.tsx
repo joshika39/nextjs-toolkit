@@ -12,7 +12,7 @@ import {
 } from '../ui/dropdown-menu';
 import {Button} from '../ui/button';
 import {LanguagesIcon} from "lucide-react";
-import {Language} from "@/toolkit/types";
+import {Language} from "@/toolkit/lib/types";
 import React from 'react';
 
 type Locale = {

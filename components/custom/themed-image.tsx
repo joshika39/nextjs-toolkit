@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {cn} from "../../lib/utils";
+import {cn} from "@/toolkit/lib/utils";
 
 type ThemedImageProps = {
   // TODO: Fix the type of darkImage and lightImage to be StaticImageData

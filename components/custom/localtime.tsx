@@ -1,5 +1,5 @@
 'use client'
-import {formatTranslation as f} from "../../i18n/utils"
+import {formatTranslation as f} from "@/toolkit/i18n/utils"
 import React, {useEffect, useState} from "react";
 
 type LocalTimeProps = {
