@@ -1,9 +1,9 @@
 "use server";
 
 import {RiInformationLine, RiErrorWarningLine, RiAlarmWarningLine, RiLightbulbFlashLine} from "@remixicon/react";
-import {cn} from "../../lib/utils";
+import {cn} from "@/toolkit/utils";
 import React from "react";
-import {Alert, AlertDescription, AlertTitle} from "../ui/alert";
+import {Alert, AlertDescription, AlertTitle} from "@/toolkit/alert";
 
 export type AlertLocale = {
   info: string;
