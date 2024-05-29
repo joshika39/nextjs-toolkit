@@ -8,8 +8,8 @@ import {
   StarterKit,
   Placeholder,
   AIHighlight,
-} from "novel/extensions";
-import { UploadImagesPlugin } from "novel/plugins";
+} from "novel/dist/extensions";
+import { UploadImagesPlugin } from "novel/dist/plugins";
 
 import { cx } from "class-variance-authority";
 

@@ -1,7 +1,6 @@
 "use client";
 
-import { Command, CommandInput } from "@/components/ui/command";
-
+import { Command, CommandInput } from "@/toolkit/command";
 import { useCompletion } from "ai/react";
 import { toast } from "sonner";
 import {EditorInstance, useEditor} from "novel";
@@ -9,14 +8,14 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import AISelectorCommands from "./ai-selector-commands";
 import AICompletionCommands from "./ai-completion-command";
-import { ScrollArea } from "../ui/scroll-area";
-import { Button } from "../ui/button";
+import { ScrollArea } from "@/toolkit/scroll-area";
+import { Button } from "@/toolkit/button";
 import { ArrowUp } from "lucide-react";
-import Magic from "../ui/icons/magic";
-import CrazySpinner from "../ui/icons/crazy-spinner";
-import { addAIHighlight } from "novel/extensions";
-//TODO: I think it makes more sense to create a custom Tiptap extension for this functionality https://tiptap.dev/docs/editor/ai/introduction
+import Magic from "@/toolkit/icons/magic";
+import CrazySpinner from "@/toolkit/icons/crazy-spinner";
+import { addAIHighlight } from "novel/dist/extensions";
 
+//TODO: I think it makes more sense to create a custom Tiptap extension for this functionality https://tiptap.dev/docs/editor/ai/introduction
 interface AISelectorProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;

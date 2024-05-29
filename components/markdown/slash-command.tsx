@@ -11,10 +11,12 @@ import {
   Text,
   TextQuote,
 } from "lucide-react";
-import { createSuggestionItems } from "novel/extensions";
-import { Command, renderItems } from "novel/extensions";
+import { createSuggestionItems } from "novel/dist/extensions";
+import { Command, renderItems } from "novel/dist/extensions";
 import { uploadFn } from "./image-upload";
 
+// TODO: Localize the strings.
+// TODO: Either from a JSON file or from a database.
 export const suggestionItems = createSuggestionItems([
   {
     title: "テキスト",

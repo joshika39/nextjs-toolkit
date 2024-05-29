@@ -1,8 +1,8 @@
 'use client';
 import React, {useEffect, useState} from "react";
-import {convertNovelToHtml} from "@/components/markdown/helpers/editor-processor";
+import {convertNovelToHtml} from "./helpers/editor-processor";
 import {JSONContent} from "novel";
-import {atou} from "@/backend/exports";
+import {atou} from "@/toolkit/utils";
 
 export const htmlStringToReact = (html: string) => {
   return <div className={'rendered-html'} dangerouslySetInnerHTML={{__html: html}}/>;

@@ -29,7 +29,6 @@ import {handleCommandNavigation, ImageResizer, SuggestionItem} from "novel/dist/
 
 const extensions = [...defaultExtensions, slashCommand];
 
-
 type AdvancedEditorProps = {
   storagePath?: string;
   savedLabelPosition?: 'left' | 'right';
@@ -43,6 +42,7 @@ type AdvancedEditorProps = {
   setJsonContent?: (json: JSONContent) => void;
 }
 
+// TODO: Localize the editor
 const Editor = ({
                   savedLabelPosition = 'right',
                   storagePath = 'ablaze.lobby.temp-novel',

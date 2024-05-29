@@ -1,5 +1,5 @@
 import React from "react";
-import {CommandGroup, CommandItem, CommandSeparator} from "../ui/command";
+import {CommandGroup, CommandItem, CommandSeparator} from "@/toolkit/command";
 import {useEditor} from "novel";
 import {Check, TextQuote, TrashIcon} from "lucide-react";
 

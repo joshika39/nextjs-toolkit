@@ -1,5 +1,5 @@
 import React from "react";
-import { CommandGroup, CommandItem, CommandSeparator } from "../ui/command";
+import {CommandGroup, CommandItem, CommandSeparator} from "@/toolkit/command";
 import {
   ArrowDownWideNarrow,
   CheckCheck,
@@ -7,8 +7,8 @@ import {
   StepForward,
   WrapText,
 } from "lucide-react";
-import { useEditor } from "novel";
-import { getPrevText } from "novel/extensions";
+import {useEditor} from "novel";
+import {getPrevText} from "novel/dist/utils";
 
 const options = [
   {
@@ -38,8 +38,8 @@ interface AISelectorCommandsProps {
   onSelect: (value: string, option: string) => void;
 }
 
-const AISelectorCommands = ({ onSelect }: AISelectorCommandsProps) => {
-  const { editor } = useEditor();
+const AISelectorCommands = ({onSelect}: AISelectorCommandsProps) => {
+  const {editor} = useEditor();
 
   return (
     <>
@@ -60,25 +60,25 @@ const AISelectorCommands = ({ onSelect }: AISelectorCommandsProps) => {
             key={option.value}
             value={option.value}
           >
-            <option.icon className="h-4 w-4 text-purple-500" />
+            <option.icon className="h-4 w-4 text-purple-500"/>
             {option.label}
           </CommandItem>
         ))}
       </CommandGroup>
-      <CommandSeparator />
+      <CommandSeparator/>
       <CommandGroup heading="Use AI to do more">
         <CommandItem
           onSelect={() => {
             if (!editor) {
               return;
             }
-            const text = getPrevText(editor, { chars: 5000 });
+            const text = getPrevText(editor, 5000);
             onSelect(text, "continue");
           }}
           value="continue"
           className="gap-2 px-4"
         >
-          <StepForward className="h-4 w-4 text-purple-500" />
+          <StepForward className="h-4 w-4 text-purple-500"/>
           Continue writing
         </CommandItem>
       </CommandGroup>

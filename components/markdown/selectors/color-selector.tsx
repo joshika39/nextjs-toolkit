@@ -1,96 +1,8 @@
 import { Check, ChevronDown } from "lucide-react";
 import type { Dispatch, SetStateAction } from "react";
 import { EditorBubbleItem, useEditor } from "novel";
-import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
-import {Button} from "@/components/ui/button";
-
-export interface BubbleColorMenuItem {
-  name: string;
-  color: string;
-}
-
-interface ColorSelectorProps {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-const TEXT_COLORSasd: BubbleColorMenuItem[] = [
-  {
-    name: "Default",
-    color: "var(--novel-black)",
-  },
-  {
-    name: "Purple",
-    color: "#9333EA",
-  },
-  {
-    name: "Red",
-    color: "#E00000",
-  },
-  {
-    name: "Yellow",
-    color: "#EAB308",
-  },
-  {
-    name: "Blue",
-    color: "#2563EB",
-  },
-  {
-    name: "Green",
-    color: "#008A00",
-  },
-  {
-    name: "Orange",
-    color: "#FFA500",
-  },
-  {
-    name: "Pink",
-    color: "#BA4081",
-  },
-  {
-    name: "Gray",
-    color: "#A8A29E",
-  },
-];
-
-const HIGHLIGHT_COLORSasd: BubbleColorMenuItem[] = [
-  {
-    name: "Default",
-    color: "var(--novel-highlight-default)",
-  },
-  {
-    name: "Purple",
-    color: "var(--novel-highlight-purple)",
-  },
-  {
-    name: "Red",
-    color: "var(--novel-highlight-red)",
-  },
-  {
-    name: "Yellow",
-    color: "var(--novel-highlight-yellow)",
-  },
-  {
-    name: "Blue",
-    color: "var(--novel-highlight-blue)",
-  },
-  {
-    name: "Green",
-    color: "var(--novel-highlight-green)",
-  },
-  {
-    name: "Orange",
-    color: "var(--novel-highlight-orange)",
-  },
-  {
-    name: "Pink",
-    color: "var(--novel-highlight-pink)",
-  },
-  {
-    name: "Gray",
-    color: "var(--novel-highlight-gray)",
-  },
-];
+import {Popover, PopoverContent, PopoverTrigger} from "@/toolkit/popover";
+import {Button} from "@/toolkit/button";
 
 const TEXT_COLORS: BubbleColorMenuItem[] = [
   {
@@ -173,6 +85,16 @@ const HIGHLIGHT_COLORS: BubbleColorMenuItem[] = [
 interface ColorSelectorProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+}
+
+interface ColorSelectorProps {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface BubbleColorMenuItem {
+  name: string;
+  color: string;
 }
 
 export const ColorSelector = ({ open, onOpenChange }: {open: any, onOpenChange: any}) => {
