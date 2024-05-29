@@ -62,13 +62,46 @@ const config = {
 
 ### Step 4: [Optional] Add the path to the `tsconfig.json` file
 You will have an easier time importing the toolkit components if you add the path to the `tsconfig.json` file.
+
+You have two options:
+ - The first is easier to set up, but it will be a bit harder to maintain.
+(You will add only the root path to the toolkit and then you 
+will have to import the components like this: `import { Button } from '@toolkit/components/ui/button'`.)
+ - The second is a bit harder to set up, but it will be easier to maintain.
+(You will add the sub paths separately and then 
+you will be able to import the components like this: `import { Button } from '@toolkit/button'`.)
+
+#### Option 1: Add the root path to the `tsconfig.json` file
+
 ```json
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@toolkit/*": [
-        "./components/toolkit/*"
+        "./toolkit/*"
+      ]
+    }
+  }
+}
+```
+
+#### Option 2: Add the sub paths to the `tsconfig.json` file
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/toolkit/*": [
+        "./toolkit/components/ui/*",
+        "./toolkit/components/layout/*",
+        "./toolkit/components/custom/*",
+        "./toolkit/components/markdown/*",
+        "./toolkit/components/*",
+        "./toolkit/lib/*",
+        "./toolkit/helpers/*",
+        "./toolkit/i18n/*"
       ]
     }
   }
