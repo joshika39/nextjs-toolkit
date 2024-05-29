@@ -1,19 +1,19 @@
 "use client";
 
-import { Command, CommandInput } from "@/toolkit/components/command";
-import { useCompletion } from "ai/react";
-import { toast } from "sonner";
+import {Command, CommandInput} from "@/toolkit/components/command";
+import {useCompletion} from "ai/react";
+import {toast} from "sonner";
 import {EditorInstance, useEditor} from "novel";
-import { useEffect, useState } from "react";
+import {useState} from "react";
 import Markdown from "react-markdown";
 import AISelectorCommands from "./ai-selector-commands";
 import AICompletionCommands from "./ai-completion-command";
-import { ScrollArea } from "@/toolkit/components/scroll-area";
-import { Button } from "@/toolkit/components/button";
-import { ArrowUp } from "lucide-react";
+import {ScrollArea} from "@/toolkit/components/scroll-area";
+import {Button} from "@/toolkit/components/button";
+import {ArrowUp} from "lucide-react";
 import Magic from "../icons/magic";
 import CrazySpinner from "../icons/crazy-spinner";
-import { addAIHighlight } from "novel/dist/extensions";
+import {addAIHighlight} from "novel/dist/extensions";
 
 //TODO: I think it makes more sense to create a custom Tiptap extension for this functionality https://tiptap.dev/docs/editor/ai/introduction
 interface AISelectorProps {
@@ -21,20 +21,20 @@ interface AISelectorProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export function AISelector({ open, onOpenChange }: AISelectorProps) {
-  const { editor } = useEditor();
+export function AISelector({onOpenChange}: AISelectorProps) {
+  const {editor} = useEditor();
   const [inputValue, setInputValue] = useState("");
 
-  const { completion, complete, isLoading } = useCompletion({
-    // id: "novel",
+  const {completion, complete, isLoading} = useCompletion({
+    id: "novel",
     api: "/api/generate",
-    onResponse: (response) => {
+    "onResponse": (response) => {
       if (response.status === 429) {
         toast.error("You have reached your request limit for the day.");
         return;
       }
     },
-    onError: (e) => {
+    "onError": (e) => {
       toast.error(e.message);
     },
   });
@@ -42,7 +42,7 @@ export function AISelector({ open, onOpenChange }: AISelectorProps) {
   const hasCompletion = completion.length > 0;
 
   const handleAddAiHighlight = (editor: EditorInstance | null | undefined) => {
-    if(!editor) {
+    if (!editor) {
       return;
     }
     addAIHighlight(editor)
@@ -62,10 +62,10 @@ export function AISelector({ open, onOpenChange }: AISelectorProps) {
 
       {isLoading && (
         <div className="flex h-12 w-full items-center px-4 text-sm font-medium text-muted-foreground text-purple-500">
-          <Magic className="mr-2 h-4 w-4 shrink-0  " />
+          <Magic className="mr-2 h-4 w-4 shrink-0  "/>
           AI is thinking
           <div className="ml-2 mt-1">
-            <CrazySpinner />
+            <CrazySpinner/>
           </div>
         </div>
       )}
@@ -86,13 +86,17 @@ export function AISelector({ open, onOpenChange }: AISelectorProps) {
             <Button
               size="icon"
               className="absolute right-2 top-1/2 h-6 w-6 -translate-y-1/2 rounded-full bg-purple-500 hover:bg-purple-900"
-              onClick={() => {
-                if (completion)
-                  return complete(completion, {
-                    body: { option: "zap", command: inputValue },
-                  }).then(() => setInputValue(""));
+              onClick={async () => {
+                if (completion) {
+                  const options = {
+                    body: {option: "zap", command: inputValue}
+                  };
+                  const res = await complete(completion, options);
+                  setInputValue("");
+                  return res;
+                }
 
-                if(!editor){
+                if (!editor) {
                   return;
                 }
 
@@ -102,11 +106,11 @@ export function AISelector({ open, onOpenChange }: AISelectorProps) {
                 );
 
                 complete(text, {
-                  body: { option: "zap", command: inputValue },
+                  body: {option: "zap", command: inputValue},
                 }).then(() => setInputValue(""));
               }}
             >
-              <ArrowUp className="h-4 w-4" />
+              <ArrowUp className="h-4 w-4"/>
             </Button>
           </div>
           {hasCompletion ? (
@@ -120,7 +124,7 @@ export function AISelector({ open, onOpenChange }: AISelectorProps) {
           ) : (
             <AISelectorCommands
               onSelect={(value, option) =>
-                complete(value, { body: { option } })
+                complete(value, {body: {option}})
               }
             />
           )}
