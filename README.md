@@ -93,14 +93,18 @@ you will be able to import the components like this: `import { Button } from '@t
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/toolkit/*": [
+      "@/toolkit/components/*": [
         "./toolkit/components/ui/*",
         "./toolkit/components/layout/*",
         "./toolkit/components/custom/*",
         "./toolkit/components/markdown/*",
         "./toolkit/components/*",
-        "./toolkit/lib/*",
-        "./toolkit/helpers/*",
+        "./toolkit/helpers/*"
+      ],
+      "@/toolkit/lib/*": [
+        "./toolkit/lib/*"
+      ],
+      "@/toolkit/i18n/*": [
         "./toolkit/i18n/*"
       ]
     }
