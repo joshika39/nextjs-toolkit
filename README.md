@@ -109,6 +109,9 @@ you will be able to import the components like this: `import { Button } from '@t
       ],
       "@/toolkit/*": [
         "./toolkit/*"
+      ],
+      "@/toolkit/auth/*": [
+        "./auth/*"
       ]
     }
   }
@@ -124,4 +127,36 @@ Copy it anywhere in your project and import it in your `layout.tsx` file.
 ```tsx
 // layout.tsx
 import '../path/to/globals.css'
+```
+
+## Advanced Usage
+
+### Auth
+
+Install the required packages:
+
+```bash
+# Using npm
+npm i next-auth @octokit/core
+
+# Or using yarn
+yarn add next-auth @octokit/core
+
+# Or using pnpm
+pnpm add next-auth @octokit/core
+```
+
+You can check for the allowed users like:
+
+```ts
+import {isUserInOrg, isWhitelisted, isUserAllowed} from '@toolkit/auth/utils'
+
+const allowedOrgs = ["Ablaze-MIRAI"]
+// The email is the user's email, and the account is the next-auth account object.
+const inOrg = isUserInOrg(allowedOrgs, email, account);
+
+const allowedEmails = ["1em@ail.com"]
+const whitelisted = isWhitelisted(allowedEmails, email);
+
+const allowed = isUserAllowed(allowedOrgs, allowedEmails, email, account);
 ```
