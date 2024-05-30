@@ -23,6 +23,7 @@
     "format": "prettier --write '**/*.{ts,tsx}'"
   },
   "dependencies": {
+    "@octokit/core": "^6.1.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
@@ -42,6 +43,7 @@
     "cmdk": "^1.0.0",
     "framer-motion": "^11.2.6",
     "lucide-react": "^0.379.0",
+    "next-auth": "^4.24.7",
     "next-themes": "^0.3.0",
     "novel": "^0.4.2",
     "react-aria": "^3.27.0",
