@@ -13,6 +13,9 @@
       ],
       "@/toolkit/lib/*": [
         "./lib/*"
+      ],
+      "@/toolkit/auth/*": [
+        "./auth/*"
       ]
     },
     "outDir": "dist",
@@ -35,7 +38,7 @@
     "jsx": "preserve",
     "incremental": true,
     "types": [
-      "node",
+      "node"
     ]
   },
   "include": [
