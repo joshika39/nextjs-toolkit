@@ -23,31 +23,31 @@ function convertContentToHtml(content: Array<JSONContent>): string {
           for (const mark of item.marks) {
             switch (mark.type) {
               case 'bold':
-                marks.push({ type: 'strong' });
+                marks.push({type: 'strong'});
                 break;
               case 'italic':
-                marks.push({ type: 'em' });
+                marks.push({type: 'em'});
                 break;
               case 'underline':
-                marks.push({ type: 'u' });
+                marks.push({type: 'u'});
                 break;
               case 'code':
-                marks.push({ type: 'code' });
+                marks.push({type: 'code'});
                 break;
               case 'strike':
-                marks.push({ type: 's' });
+                marks.push({type: 's'});
                 break;
               case 'link':
-                if(mark.attrs === undefined || mark.attrs.href === undefined) {
+                if (mark.attrs === undefined || mark.attrs.href === undefined) {
                   break;
                 }
                 const attrs = {
                   href: mark.attrs.href,
                   target: '_blank',
                   rel: 'noopener noreferrer nofollow',
-                  class:"text-muted-foreground underline underline-offset-[3px] hover:text-primary transition-colors cursor-pointer"
+                  class: "text-muted-foreground underline underline-offset-[3px] hover:text-primary transition-colors cursor-pointer"
                 }
-                marks.push({ type: 'a', attrs });
+                marks.push({type: 'a', attrs});
                 break;
               default:
                 console.error('Unknown mark type:', mark.type);
@@ -74,6 +74,25 @@ function convertContentToHtml(content: Array<JSONContent>): string {
   return html;
 }
 
+function convertContentToString(content: Array<JSONContent>): string {
+  let text = '';
+  for (const item of content) {
+    switch (item.type) {
+      case 'text':
+        text += item.text || '';
+        break;
+      case 'hardBreak':
+        text += '\n';
+        break;
+      default:
+        console.error('Unknown content type:', item.type);
+        break;
+    }
+  }
+
+  return text;
+}
+
 function convertToHtml(item: JSONContent): string {
   try {
     switch (item.type) {
@@ -96,10 +115,33 @@ function convertToHtml(item: JSONContent): string {
         }
         return `<ul>${convertBulletListToHtml(item.content)}</ul>`;
       case 'taskList':
-        if(item.content === undefined) {
+        if (item.content === undefined) {
           break;
         }
         return `<ul type="taskList">${convertTaskListToHtml(item.content)}</ul>`;
+      default:
+        console.error('Unknown main type:', item.type);
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  return '';
+}
+
+function convertToString(item: JSONContent): string {
+  if (item.content === undefined) {
+    return '';
+  }
+  try {
+    switch (item.type) {
+      case 'heading':
+        if (item.attrs === undefined) {
+          break;
+        }
+        return convertContentToString(item.content);
+      case 'paragraph':
+        return convertContentToString(item.content);
       default:
         console.error('Unknown main type:', item.type);
     }
@@ -155,6 +197,10 @@ const convertTaskListToHtml = (content: Array<JSONContent>): string => {
 
 }
 
+/**
+ * Convert a JSONContent object to an HTML string
+ * @param novelContent
+ */
 export function convertNovelToHtml(novelContent: JSONContent): string {
   let html = '';
 
@@ -166,4 +212,22 @@ export function convertNovelToHtml(novelContent: JSONContent): string {
     html += convertToHtml(item);
   }
   return html;
+}
+
+/**
+ * Convert a JSONContent object to a string
+ * @param novelContent
+ */
+export function convertNovelToString(novelContent: JSONContent): string {
+  let text = '';
+
+  if (novelContent.type !== 'doc' || novelContent.content === undefined) {
+    return text;
+  }
+
+  for (const item of novelContent.content) {
+    text += `${convertToString(item)}\n`;
+  }
+  text = text.replace(/\n+$/, '');
+  return text;
 }
