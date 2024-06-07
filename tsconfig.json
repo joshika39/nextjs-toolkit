@@ -16,7 +16,10 @@
       ],
       "@/toolkit/auth/*": [
         "./auth/*"
-      ]
+      ],
+      "@/toolkit/styles/*": [
+        "./styles/*"
+      ],
     },
     "outDir": "dist",
     "target": "es5",
