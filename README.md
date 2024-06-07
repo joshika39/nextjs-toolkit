@@ -112,6 +112,9 @@ you will be able to import the components like this: `import { Button } from '@t
       ],
       "@/toolkit/auth/*": [
         "./auth/*"
+      ],
+      "@/toolkit/styles/*": [
+        "./styles/*"
       ]
     }
   }
@@ -126,7 +129,7 @@ Copy it anywhere in your project and import it in your `layout.tsx` file.
 
 ```tsx
 // layout.tsx
-import '../path/to/globals.css'
+import '@toolkit/styles/[ablaze|floorp]/globals.css'
 ```
 
 ## Advanced Usage
