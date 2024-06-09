@@ -60,14 +60,27 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  ariaLabel?: string
   asChild?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({className, variant, align, paddingV, paddingH, size, asChild = false, ...props}, ref) => {
     const Comp = asChild ? Slot : "button"
+    const getLabel = () => {
+      if (props.ariaLabel) {
+        return props.ariaLabel
+      }
+
+      if (typeof props.children === "string") {
+        return props.children
+      }
+
+      return "Button"
+    }
     return (
       <Comp
+        aria-label={getLabel()}
         className={cn(buttonVariants({paddingV, align, paddingH, variant, size, className}))}
         ref={ref}
         {...props}
