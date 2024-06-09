@@ -5,8 +5,7 @@ type CustomLinkProps = {
   children: React.ReactNode;
   ariaLabel?: string;
   href: string;
-  target?: string;
-}
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export default function Link({children, ...props}: CustomLinkProps) {
   const getLabel = () => {
