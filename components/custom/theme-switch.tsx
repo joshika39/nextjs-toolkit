@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import {RiSunFill, RiMoonLine} from "@remixicon/react";
 import {useTheme} from "next-themes"
 
 import {Button} from "../ui/button"
@@ -11,6 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
+import {Moon, Sun} from "lucide-react";
 
 function AbsoluteDiv({children}: { children: React.ReactNode }) {
   return (
@@ -29,11 +29,11 @@ export function ThemeSwitch() {
         <Button variant="outline" paddingH={"sm"} className="relative">
           <div className="h-5 w-5"></div>
           <AbsoluteDiv>
-            <RiSunFill
+            <Sun
               className="h-5 w-5 scale-100 dark:scale-50 rotate-0 transition-all dark:-rotate-90 hover:rotate-6 translate-y-0 dark:-translate-y-5 duration-1000"/>
           </AbsoluteDiv>
           <AbsoluteDiv>
-            <RiMoonLine
+            <Moon
               className="h-5 w-5 translate-y-5 transition-all duration-1000 dark:rotate-0 dark:translate-y-0"/>
           </AbsoluteDiv>
           <span className="sr-only">Toggle theme</span>

@@ -1,9 +1,9 @@
 "use server";
 
-import {RiInformationLine, RiErrorWarningLine, RiAlarmWarningLine, RiLightbulbFlashLine} from "@remixicon/react";
 import {cn} from "@/toolkit/lib/utils";
 import React from "react";
 import {Alert, AlertDescription, AlertTitle} from "@/toolkit/components/alert";
+import {CircleCheck, CircleX, Info, Lightbulb, TriangleAlert} from "lucide-react";
 
 export type AlertLocale = {
   info: string;
@@ -38,15 +38,15 @@ export default async function FAlert({titles, description, severity = "info"}: A
   const getIcon = (severity: "info" | "warning" | "error" | "success" | "dyk") => {
     switch (severity) {
       case "info":
-        return <RiInformationLine className="accent-blue-500 h-5 w-5"/>;
+        return <Info className="accent-blue-500 h-5 w-5"/>;
       case "warning":
-        return <RiErrorWarningLine className="text-yellow-500 h-5 w-5"/>;
+        return <TriangleAlert className="text-yellow-500 h-5 w-5"/>;
       case "error":
-        return <RiAlarmWarningLine className="accent-destructive h-5 w-5"/>;
+        return <CircleX className="accent-destructive h-5 w-5"/>;
       case "success":
-        return <RiLightbulbFlashLine className="text-green-500 h-5 w-5"/>;
+        return <CircleCheck className="text-green-500 h-5 w-5"/>;
       case "dyk":
-        return <RiLightbulbFlashLine className="text-purple-700 h-5 w-5 bg-blue bg-y"/>;
+        return <Lightbulb className="text-purple-700 h-5 w-5 bg-blue bg-y"/>;
     }
   }
 
