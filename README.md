@@ -33,13 +33,13 @@ If you use ssh, then you need to have your ssh key added to your GitHub account.
 
 ```bash
 # Using npm
-npm i sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+npm i sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 
 # Or using yarn
-yarn add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+yarn add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 
 # Or using pnpm
-pnpm add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip @remixicon/react clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
+pnpm add sonner ai novel @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-dialog @radix-ui/react-dropdown-menu @radix-ui/react-hover-card @radix-ui/react-popover @radix-ui/react-scroll-area @radix-ui/react-separator @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-tooltip clsx cmdk framer-motion lucide-react next-themes react-aria react-stately react-use-measure tailwind-merge tailwindcss-animate class-variance-authority
 ```
 
 ### Step 3: Add the toolkit path to your `tailwind.config.[js|ts]` file
