@@ -50,9 +50,6 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.0.7
         version: 1.0.7(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@remixicon/react':
-        specifier: ^4.2.0
-        version: 4.2.0(react@18.3.1)
       ai:
         specifier: ^3.1.18
         version: 3.1.30(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27(typescript@5.4.5))(zod@3.23.8)
@@ -1367,11 +1364,6 @@ packages:
 
   '@remirror/core-constants@2.0.2':
     resolution: {integrity: sha512-dyHY+sMF0ihPus3O27ODd4+agdHMEmuRdyiZJ2CCWjPV5UFmn17ZbElvk6WOGVE4rdCJKZQCrPV2BcikOMLUGQ==}
-
-  '@remixicon/react@4.2.0':
-    resolution: {integrity: sha512-eGhKpZ88OU0qkcY9pJu6khBmItDV82nU130E6C68yc+FbljueHlUYy/4CrJsmf860RIDMay2Rpzl27OSJ81miw==}
-    peerDependencies:
-      react: '>=18.2.0'
 
   '@scena/dragscroll@1.4.0':
     resolution: {integrity: sha512-3O8daaZD9VXA9CP3dra6xcgt/qrm0mg0xJCwiX6druCteQ9FFsXffkF8PrqxY4Z4VJ58fFKEa0RlKqbsi/XnRA==}
@@ -4685,10 +4677,6 @@ snapshots:
       react: 18.3.1
 
   '@remirror/core-constants@2.0.2': {}
-
-  '@remixicon/react@4.2.0(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
 
   '@scena/dragscroll@1.4.0':
     dependencies:
