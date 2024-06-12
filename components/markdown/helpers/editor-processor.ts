@@ -114,6 +114,11 @@ function convertToHtml(item: JSONContent): string {
           break;
         }
         return `<ul>${convertBulletListToHtml(item.content)}</ul>`;
+      case 'orderedList':
+        if (item.content === undefined) {
+          break;
+        }
+        return `<ol>${convertBulletListToHtml(item.content)}</ol>`;
       case 'taskList':
         if (item.content === undefined) {
           break;
