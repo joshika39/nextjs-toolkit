@@ -113,12 +113,12 @@ function convertToHtml(item: JSONContent): string {
         if (item.content === undefined) {
           break;
         }
-        return `<ul>${convertBulletListToHtml(item.content)}</ul>`;
+        return `<ul>${convertListToHtml(item.content)}</ul>`;
       case 'orderedList':
         if (item.content === undefined) {
           break;
         }
-        return `<ol>${convertBulletListToHtml(item.content)}</ol>`;
+        return `<ol>${convertListToHtml(item.content)}</ol>`;
       case 'taskList':
         if (item.content === undefined) {
           break;
@@ -147,8 +147,12 @@ function convertToString(item: JSONContent): string {
         return convertContentToString(item.content);
       case 'paragraph':
         return convertContentToString(item.content);
+      case 'bulletList':
+        return convertListToString(item.content);
+      case 'orderedList':
+        return convertListToString(item.content);
       default:
-        console.error('Unknown main type:', item.type);
+        console.error('Unknown main type (string):', item.type);
     }
   } catch (e) {
     console.error(e);
@@ -157,7 +161,7 @@ function convertToString(item: JSONContent): string {
   return '';
 }
 
-const convertBulletListToHtml = (content: Array<JSONContent>): string => {
+const convertListToHtml = (content: Array<JSONContent>): string => {
   let html = '';
   for (const item of content) {
     switch (item.type) {
@@ -177,6 +181,29 @@ const convertBulletListToHtml = (content: Array<JSONContent>): string => {
     }
   }
   return html;
+}
+
+const convertListToString = (content: Array<JSONContent>): string => {
+  let text = '';
+  for (const item of content) {
+    switch (item.type) {
+      case 'listItem':
+        if (item.content === undefined) {
+          break;
+        }
+        let subText = '';
+        for (const subItem of item.content) {
+          subText += convertToString(subItem);
+        }
+        text += `- ${subText}\n`;
+        break;
+      default:
+        console.error('Unknown sub-type (string):', item.type);
+        break;
+    }
+  }
+  return text;
+
 }
 
 const convertTaskListToHtml = (content: Array<JSONContent>): string => {
